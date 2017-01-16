@@ -2,7 +2,7 @@
 A simple dll injector written in c.
 
 Documentation:
-You're lucky, there is only one function :p
+You're lucky, there is only one function :
 int Inject(DWORD procId, char* dllPath)
 
 Inject the dll dllPath into process who have id procId.
