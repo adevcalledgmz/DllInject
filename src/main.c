@@ -36,7 +36,7 @@ int Inject(DWORD procId, char* dllPath)
         }
 
         CloseHandle(handle);
-        VirtualFreeEx(handle, SpaceAlloc, strlen(dllPath), MEM_COMMIT);
+        VirtualFreeEx(handle, SpaceAlloc, strlen(dllPath), MEM_RELEASE);
 
         return 0;
     }
