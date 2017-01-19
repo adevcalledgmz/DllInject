@@ -9,7 +9,7 @@ int Inject(DWORD procId, char* dllPath)
     HANDLE handle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, procId);
     if(handle)
     {
-        LPVOID LoadLibAddr = (LPVOID)GetProcAddress(GetModuleHandle((LPCWSTR)"kernel32.dll"), "LoadLibraryA"); //Cast to LPCWSTR is required only by Visual Studio.
+        LPVOID LoadLibAddr = (LPVOID)GetProcAddress(GetModuleHandleA("kernel32.dll"), "LoadLibraryA"); //Cast to LPCWSTR is required only by Visual Studio.
         if(LoadLibAddr == NULL)
         {
             ERR("Cannot find LoadLibraryA Handle in kernel32.dll.");
